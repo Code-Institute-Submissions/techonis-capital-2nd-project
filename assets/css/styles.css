@@ -3,7 +3,8 @@
 
 /*** General ***/
 :root {
-    --mainBlack: #090C08;
+    --mainBlack: #000000;
+    --mainDark: #202020;
     --mainRed: #4E1F2E;
     --mainWhite: #EFE9F4;
     --mainBlue: #0B3954;
@@ -18,7 +19,7 @@ body {
 }
 /*** Navbar ***/
 .navbar,.dropdown-menu {
-    background-color: var(--mainBlack);
+    background-color: var(--mainDark);
     border-bottom: 5px solid var(--mainRed);
  
 }
