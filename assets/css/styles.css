@@ -1,3 +1,19 @@
-p {
-    color:red;
+/*** General ***/
+:root {
+    --mainBlack: #090C08;
+    --mainRed: #EE6352;
+    --mainWhite: #EFE9F4;
+    --mainBlue: #0B3954;
+    --mainGreen: #04471C;
 }
+
+body {
+    background-color: var(--mainWhite);
+}
+/*** Navbar ***/
+
+/*** Banner ***/
+
+/*** Navbar ***/
+
+/*** Navbar ***/
