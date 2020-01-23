@@ -1,17 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');
+
 /*** General ***/
 :root {
     --mainBlack: #090C08;
-    --mainRed: #EE6352;
+    --mainRed: #4E1F2E;
     --mainWhite: #EFE9F4;
     --mainBlue: #0B3954;
     --mainGreen: #04471C;
+    --mainGold: #FFD700;
+    --titleFont: 'Raleway', sans-serif;
+    --mainFont: 'Roboto Condensed', sans-serif;
 }
 
 body {
     background-color: var(--mainWhite);
 }
 /*** Navbar ***/
+.navbar,.dropdown-menu {
+    background-color: var(--mainBlack);
+    border-bottom: 5px solid var(--mainRed);
+ 
+}
 
+.navbar .navbar-brand {
+    display: block;
+    padding: 15px 40px;
+}
+
+.navbar .nav-link,.dropdown-item {
+    color: var(--mainRed)!important;
+    font-family: var(--mainFont);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.dropdown-item:hover, .nav-item:hover {
+    background-color: var(--mainGold);
+}
 /*** Banner ***/
 
 /*** Navbar ***/
