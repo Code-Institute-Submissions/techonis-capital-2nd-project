@@ -79,7 +79,37 @@ body {
     font-weight: 600;
 }
 
+.btn-main {
+    border: 2px solid var(--mainRed);
+    border-radius: 0px;
+}
 
-/*** Navbar ***/
+.btn-main:hover {
+    border: 2px solid var(--mainGold);
+    background-color: var(--mainRed);
+    color: var(--mainGold);
+}
+/*** About us ***/
+
+#home {
+    margin-bottom: 2rem;
+}
+@media screen and (min-width: 768px){
+    #home {
+        margin-bottom: 5rem;
+    }
+}
+
+#about-us h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    padding-bottom: 1rem;
+}
+
+#about-us p {
+    font-family: var(--mainFont);
+    font-size: 1.5rem;
+    color: var(--mainBlack);
+}
 
 /*** Navbar ***/
