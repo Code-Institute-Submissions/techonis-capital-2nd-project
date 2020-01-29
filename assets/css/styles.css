@@ -40,7 +40,7 @@ body {
     background-color: var(--mainGold);
 }
 /*** Banner ***/
-#banner {
+#home {
     width: 100vw;
     height: 100vh;
     background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url('../img/background-img-1.jpg');
@@ -50,7 +50,7 @@ body {
     background-attachment: fixed;
     position: relative;
 }
-#banner::after{
+#home::after{
     content: '';
     width: 100%;
     height: 100%;
@@ -61,6 +61,12 @@ body {
     transform-origin: left bottom;
     transform: skewY(2deg);
 }
+
+.vertical-center {
+    min-height: 100vh;  
+    display: flex;
+    align-items: center;
+  }
 /*** Navbar ***/
 
 /*** Navbar ***/
