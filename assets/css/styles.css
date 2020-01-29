@@ -112,4 +112,15 @@ body {
     color: var(--mainBlack);
 }
 
+#services::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: var(--mainRed);
+    z-index: -2;
+    bottom: -10px;
+    transform-origin: left bottom;
+    transform: skewY(2deg);
+}
 /*** Navbar ***/
