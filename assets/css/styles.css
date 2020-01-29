@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap');
 
 /*** General ***/
 :root {
@@ -67,6 +68,18 @@ body {
     display: flex;
     align-items: center;
   }
+
+.jumbotron-fluid .lead-text {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--mainRed);
+}
+.jumbotron-fluid .info-text {
+    font-family: 'Raleway', sans-serif;
+    color: var(--mainDark);
+    font-weight: 600;
+}
+
+
 /*** Navbar ***/
 
 /*** Navbar ***/
