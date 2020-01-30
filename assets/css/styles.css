@@ -89,7 +89,6 @@ body {
     background-color: var(--mainRed);
     color: var(--mainGold);
 }
-/*** About us ***/
 
 #home {
     margin-bottom: 2rem;
@@ -100,7 +99,9 @@ body {
     }
 }
 
-#about-us h2 {
+/** About-us **/
+
+#about-us h2, #services h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: 2.5rem;
     padding-bottom: 1rem;
@@ -112,15 +113,20 @@ body {
     color: var(--mainBlack);
 }
 
-#services::after{
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: var(--mainRed);
-    z-index: -2;
-    bottom: -10px;
-    transform-origin: left bottom;
-    transform: skewY(2deg);
+.icon-container {
+    font-size: 60px;
+    color: var(--mainRed);
+    padding: 50px;
+    background-color: var(--mainGold);
 }
-/*** Navbar ***/
+
+.icon-shape {
+    clip-path: circle(56px);
+}
+
+#services p {
+    font-family: var(--mainFont);
+}
+
+/*** Services ***/
+
