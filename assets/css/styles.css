@@ -7,11 +7,11 @@
     --mainBlack: #000000;
     --mainDark: #202020;
     --mainRed: #72223b;
-    --mainWhite: #EFE9F4;
+    --mainWhite: #EFE9F4;    /** All colors generated with coolors.us **/
     --mainBlue: #0B3954;
     --mainGreen: #04471C;
     --mainGold: #FFD700;
-    --titleFont: 'Raleway', sans-serif;
+    --titleFont: 'Raleway', sans-serif;                 /** Fonts are from google fonts **/
     --mainFont: 'Roboto Condensed', sans-serif;
 }
 
@@ -44,7 +44,7 @@ body {
 #home {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url('../img/background-img-1.jpg');
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url('../img/background-img-1.jpg'); /** unsplash **/
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -128,5 +128,26 @@ body {
     font-family: var(--mainFont);
 }
 
-/*** Services ***/
+/*** Subscription form ***/
 
+#contact {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('../img/background-img-2.jpg'); /** unsplash **/
+    clip-path: polygon(25% 0, 100% 0, 75% 100%, 0 100%); /** https://bennettfeely.com/clippy/ **/
+    background-position: center;
+    background-size: cover;
+}
+
+#contact h1 {
+    color: var(--mainGold);
+    font-size: 2rem;
+}
+.email-place {
+    border: none;
+    border-bottom: 2px solid var(--mainRed);
+    font-family: var(--titleFont);
+    color: var(--mainRed);
+}
+
+.form-control {
+    background-color: transparent;
+}
