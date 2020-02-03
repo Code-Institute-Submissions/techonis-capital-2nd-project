@@ -173,3 +173,27 @@ body {
     border: 2px solid var(--mainGold);
     color: var(--mainGold);
 }
+
+/*** Footer ***/
+.footer {
+    background-color: var(--mainRed);
+}    
+.footer .social-icons {
+    font-size: 3rem;
+}
+
+.footer .social-icons a {
+    color: var(--mainGold);
+    text-decoration: none;
+}
+.footer .social-icons a:hover {
+    font-size: 4rem;
+}
+.footer ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
