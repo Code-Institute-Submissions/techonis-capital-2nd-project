@@ -197,3 +197,15 @@ body {
     line-height: 1.6;
     margin-bottom: 0;
   }
+
+/** portfolio **/
+
+#portfolio, #results {
+    padding-top: 130px;
+}
+
+#portfolio h2, #results h2 {
+    font-family: var(--titleFont);
+    font-weight: 600;
+    border-bottom: 2px solid var(--mainRed);
+}
