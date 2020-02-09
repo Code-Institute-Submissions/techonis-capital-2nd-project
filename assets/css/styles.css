@@ -209,3 +209,8 @@ body {
     font-weight: 600;
     border-bottom: 2px solid var(--mainRed);
 }
+
+.card-body img {
+    width: 308px;
+    height: auto;
+}
