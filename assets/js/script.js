@@ -4,11 +4,12 @@ $('#object-list a').on('click', function (e) {
     $(this).tab('show')
   });
 
-/* isotope filter */
-$('.grid').isotope({
+/* init isotope */
+var $grid = $('.grid').isotope({
   // options
-  itemSelector: '.grid-item',
-  layoutMode: 'fitRows'
 });
-
-/* Charts for cards */
+// filter by class//
+$('.filter-button-group').on( 'click', 'button', function(){
+  var filterValue = $(this).attr('data-filter');
+  $grid.isotope({ filter: filterValue });
+});
