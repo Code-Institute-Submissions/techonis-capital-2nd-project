@@ -214,3 +214,34 @@ body {
     width: 308px;
     height: 205.33px;
 }
+
+/* filter buttons */
+
+.filter-btn {
+    border: 2px solid var(--mainRed);
+    border-radius: 0px;
+}
+.filter-btn:hover {
+    background-color: var(--mainRed);
+    color: var(--mainGold);
+}
+
+/* Card */
+.card {
+    border: 2px solid var(--mainRed);
+}
+.nav-tabs {
+    border: 1px solid var(--mainGold);
+    
+}
+.active {
+    border: 1px solid var(--mainRed);
+}
+.nav-tabs .nav-link.active {
+    color: var(--mainRed);
+    background-color: #fff;
+    border-color: var(--mainRed) var(--mainGold);
+}
+.card .nav-link {
+    color: var(--mainBlack)
+}
