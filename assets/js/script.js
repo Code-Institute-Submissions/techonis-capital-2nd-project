@@ -26,9 +26,10 @@ function makeCharts(data, chartNr) {
   var myChart = new Chart(ctx, {
       type: 'line',
       data: {
-          labels: [],
+          labels: ['1995', '2000', '2005', '2010', '2020'],
           datasets: [{
               label: 'object price',
+              cubicInterpolationMode: 'monotone',
               data: data,
               backgroundColor: [
                   'rgba(255, 99, 132, 0.2)'
