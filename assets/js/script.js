@@ -17,9 +17,9 @@ $('.filter-button-group').on( 'click', 'button', function(){
 /*** making small graphs ***/
 
 // function to make graphs
-var data1 = [[15, 19, 22, 5, 22], [12, 15, 65, 25, 62], [18, 1, 25, 24, 1], [12, 25, 42, 42, 5], 
-[12, 15, 65, 25, 62], [12, 15, 65, 25, 62], [12, 15, 65, 25, 62], [12, 15, 65, 25, 62], [12, 15, 65, 25, 62]];
-var chartNr =['myChart-1', 'myChart-2', 'myChart-3'];
+var data1 = [[15, 19, 22, 5, 22], [12, 15, 65, 25, 62], [18, 1, 25, 24, 1], [12, 25, Math.floor(Math.random() * 100), 42, 5], [12, Math.floor(Math.random() * 100), 65, 25, 62], [12, 15, 65, Math.floor(Math.random() * 100), 62], [12, 15, Math.floor(Math.random() * 100), 25, 62], [12, Math.floor(Math.random() * 100), 65, 25, 62], [Math.floor(Math.random() * 100), 15, Math.floor(Math.random() * 100), 25, 62]];
+var chartNr =['myChart-1', 'myChart-2', 'myChart-3', 
+'myChart-4', 'myChart-5', 'myChart-6', 'myChart-7', 'myChart-8', 'myChart-9'];
 
 function makeCharts(data, chartNr) {
   var ctx = document.getElementById(chartNr).getContext('2d');
