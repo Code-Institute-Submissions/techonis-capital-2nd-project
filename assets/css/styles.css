@@ -128,17 +128,9 @@ body {
 }
 
 /*** Subscription form ***/
-
-#contact {
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('../img/background-img-2.jpg'); /** unsplash **/
-    clip-path: polygon(25% 0, 100% 0, 75% 100%, 0 100%); /** https://bennettfeely.com/clippy/ **/
-    background-position: center;
-    background-size: cover;
-}
-
 #contact h1 {
-    color: var(--mainGold);
-    font-size: 1rem;
+    color: var(--mainRed);
+    font-size: 2rem;
 }
 .email-place {
     border: none;
