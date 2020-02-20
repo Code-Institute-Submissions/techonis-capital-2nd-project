@@ -51,8 +51,42 @@ function makeCharts(data, chartNr) {
       }
   });
 }
+/*** Main big chart ***/
 
+function makeBigChart() {
+  var ctx = document.getElementById('bigChart').getContext('2d');
+  var bigChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+          labels: ['1995', '2000', '2005', '2010', '2020'],
+          datasets: [{
+              label: 'object price',
+              cubicInterpolationMode: 'monotone',
+              data: [12, 15, 62, 63 , 25],
+              backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)'
+              ],
+              borderColor: [
+                  '#72223b'
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero: true
+                  }
+              }]
+          }
+      }
+  });
+}
 
+$(document).ready(function() {
+  makeBigChart();
+});
 $(".stat-1").click(function(){
     makeCharts(data1[0], chartNr[0]);
   });
@@ -83,7 +117,4 @@ makeCharts(data1[8], chartNr[8]);
 $(".stat-9").click(function(){
 makeCharts(data1[9], chartNr[9]);
   });
-// loop through HTML class
-// loop through data array
-// assign data to graph
 
