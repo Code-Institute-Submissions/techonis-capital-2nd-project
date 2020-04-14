@@ -221,6 +221,10 @@ body {
 
 /* Card */
 .card {
+    width: 350px;
+    height: 377px;
+}
+.card {
     border: 2px solid var(--mainRed);
 }
 .nav-tabs {
