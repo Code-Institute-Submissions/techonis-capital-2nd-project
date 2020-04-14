@@ -32,7 +32,7 @@ function makeCharts(data, chartNr) {
               cubicInterpolationMode: 'monotone',
               data: data,
               backgroundColor: [
-                  'rgba(255, 99, 132, 0.2)'
+                  'rgba(255, 99, 132, 0.4)'
               ],
               borderColor: [
                   '#72223b'
@@ -111,10 +111,8 @@ makeCharts(data1[6], chartNr[6]);
 $(".stat-8").click(function(){
 makeCharts(data1[7], chartNr[7]);
   });
-$(".stat-8").click(function(){
+$(".stat-9").click(function(){
 makeCharts(data1[8], chartNr[8]);
   });
-$(".stat-9").click(function(){
-makeCharts(data1[9], chartNr[9]);
-  });
+
 
