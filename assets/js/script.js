@@ -24,15 +24,30 @@ $('.filter-button-group').on( 'click', 'button', function(){
  ********************************************/
 // small charts for cards 
 
-var chartColors = 'rgba(114,34,59, 0.4)';
+var chartColor = 'rgba(114,34,59, 0.4)';
 var chartBorder = 'rgba(114,34,59)';
 
 chartconfig = {
   type: 'line',
   data: {
     datasets: [{
-      label: 'Property price by year: '
+      label: 'Property price by year: ',
+      backgroundColor: chartColor,
+      borderColor: chartBorder,
+      borderWidth: 1
     }]
+  },
+  plugins: [ChartDataSource],
+  options: {
+    plugins: {
+      datasource: {
+        type: 'sheet',
+        url: 'dataset.xlsx',
+        datasetLabels: 'Sheet1!A2',
+        indexLabels: 'Sheet1!B1:G1',
+        data: 'Sheet1!B2:G2'
+      }
+    }
   }
 };
 
@@ -78,55 +93,55 @@ window.onload = function() {
 // }
 /*** Main big chart ***/
 
-var ctx = document.getElementById('myChart').getContext('2d');
+// var ctx = document.getElementById('myChart').getContext('2d');
 
-var chart = new Chart(ctx, {
+// var chart = new Chart(ctx, {
 
-  type: 'bar',
+//   type: 'bar',
 
-  plugins: [ChartDataSource],
+//   plugins: [ChartDataSource],
 
-  options: {
+//   options: {
 
-    datasource: {
+//     datasource: {
 
-      url: 'dataset.xlsx'
+//       url: 'dataset.xlsx'
 
-    }
+//     }
 
-  }
+//   }
 
-});
+// });
 
-$(document).ready(function() {
-  makeBigChart();
-});
-$(".stat-1").click(function(){
-    makeCharts(data1[0], chartNr[0]);
-  });
-$(".stat-2").click(function(){
-makeCharts(data1[1], chartNr[1]);
-  });
-$(".stat-3").click(function(){
-makeCharts(data1[2], chartNr[2]);
-  });
-$(".stat-4").click(function(){
-makeCharts(data1[3], chartNr[3]);
-  });
-$(".stat-5").click(function(){
-makeCharts(data1[4], chartNr[4]);
-});
-$(".stat-6").click(function(){
-makeCharts(data1[5], chartNr[5]);
-  });
-$(".stat-7").click(function(){
-makeCharts(data1[6], chartNr[6]);
-  });
-$(".stat-8").click(function(){
-makeCharts(data1[7], chartNr[7]);
-  });
-$(".stat-9").click(function(){
-makeCharts(data1[8], chartNr[8]);
-  });
+// $(document).ready(function() {
+//   makeBigChart();
+// });
+// $(".stat-1").click(function(){
+//     makeCharts(data1[0], chartNr[0]);
+//   });
+// $(".stat-2").click(function(){
+// makeCharts(data1[1], chartNr[1]);
+//   });
+// $(".stat-3").click(function(){
+// makeCharts(data1[2], chartNr[2]);
+//   });
+// $(".stat-4").click(function(){
+// makeCharts(data1[3], chartNr[3]);
+//   });
+// $(".stat-5").click(function(){
+// makeCharts(data1[4], chartNr[4]);
+// });
+// $(".stat-6").click(function(){
+// makeCharts(data1[5], chartNr[5]);
+//   });
+// $(".stat-7").click(function(){
+// makeCharts(data1[6], chartNr[6]);
+//   });
+// $(".stat-8").click(function(){
+// makeCharts(data1[7], chartNr[7]);
+//   });
+// $(".stat-9").click(function(){
+// makeCharts(data1[8], chartNr[8]);
+//   });
 
 
