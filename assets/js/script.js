@@ -129,3 +129,64 @@ $(".stat-9").click(function(){
   object_title = 'Sheet1!A9';
   drawSmallCharts(chartNr[8]);
 });
+
+// Big Chart
+var dataForBig;
+var dataSetLab;
+var bigChartData =
+
+function drawBigCharts(){
+  var ctx = document.getElementById('bigChart').getContext('2d');
+  var bigChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      datasets: [{
+        label: 'Total portfolio value',
+        cubicInterpolationMode: 'monotone',
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.4)'
+        ],
+        borderColor: [
+          'rgb(255, 99, 132)'
+        ],
+        borderWidth: 2
+      }]
+    },
+    plugins: [ChartDataSource],
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero:true
+          }
+        }]
+      },
+      plugins: {
+        datasource: {
+          type: 'sheet',
+          url: 'dataset.xlsx',
+          datasetLabels: dataSetLab,
+          indexLabels: 'Sheet1!B1:G1',
+          data: dataForBig,
+        }
+      }
+    }
+  })
+};
+
+$(document).ready(function() {
+  drawBigCharts();
+});
+
+document.getElementById('')
+
+$("#portfolioByValue").click(function(){
+  dataSetLab = 'Sheet1!B11:G11';
+  dataForBig = 'Sheet1!A11';
+  bigChart.destroy();
+  bigChart = new Chart(ctx, {
+    type: 'line',
+  });
+});
+
+'Sheet1!B11:G11'

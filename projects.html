@@ -404,20 +404,21 @@
                   <h2 class="text-uppercase">results</h2>
               </div>
             </div>
-            <div class="row">
-              <div class="col text-center">
-                <div class="btn-group filter-button-group" role="group">
-                  <button class="btn filter-btn text-capitalize" type="button">All value</button>
-                  <button class="btn filter-btn text-capitalize" type="button">apartments value</button>
-                  <button class="btn filter-btn text-capitalize" type="button">houses value</button>
-                  <button class="btn filter-btn text-capitalize" type="button">land value</button>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-10 offset-md-1 text-center">
+                  <div class="btn-group" role="group" aria-label="Basic example">
+                    <button id="portfolioByValue" type="button" class="btn btn-secondary">Portfolio value</button>
+                    <button id="portfolioByType" type="button" class="btn btn-secondary">Portfolio by type</button>
+                    <button type="button" class="btn btn-secondary">Portfolio by %</button>
+                  </div>
                 </div>
-              </div>
-              <div class="col-12 text-center">
-                <canvas id="myChart" width="400" height="200"></canvas>
-              </div>              
+                <div class="col">
+                  <canvas id="bigChart" width="500" height="250"></canvas>
+                </div>
             </div>
-        </div>
+          </div>
+        </div>        
     </section>
 
     <!-- Footer -->
