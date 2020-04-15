@@ -131,62 +131,63 @@ $(".stat-9").click(function(){
 });
 
 // Big Chart
-var dataForBig;
-var dataSetLab;
-var bigChartData =
 
-function drawBigCharts(){
-  var ctx = document.getElementById('bigChart').getContext('2d');
-  var bigChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      datasets: [{
-        label: 'Total portfolio value',
-        cubicInterpolationMode: 'monotone',
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.4)'
-        ],
-        borderColor: [
-          'rgb(255, 99, 132)'
-        ],
-        borderWidth: 2
+var chartData = {
+  datasets: [{
+    label: 'Portfolio by value',
+  }]
+};
+var dataLab;
+var indexLab;
+var data;
+
+
+var ctx = document.getElementById("bigChart");
+var bigChart = new Chart(ctx, {
+  type: 'line',
+  data: chartData,
+  plugins: [ChartDataSource],
+  options: {
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
       }]
     },
-    plugins: [ChartDataSource],
-    options: {
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero:true
-          }
-        }]
-      },
-      plugins: {
-        datasource: {
-          type: 'sheet',
-          url: 'dataset.xlsx',
-          datasetLabels: dataSetLab,
-          indexLabels: 'Sheet1!B1:G1',
-          data: dataForBig,
-        }
+    plugins: {
+      datasource: {
+        type: 'sheet',
+        url: 'dataset.xlsx',
+        datasetLabels:'Sheet1!A11',
+        indexLabels: 'Sheet1!B1:G1',
+        data: 'Sheet1!B11:G11',
       }
     }
-  })
+  }
+});
+
+document.getElementById('portfolioByValue').onclick = function() {
+  myChart.destroy();
+  myChart = new Chart(ctx, {
+    type: 'line',
+    data: chartData
+  });
 };
 
-$(document).ready(function() {
-  drawBigCharts();
-});
-
-document.getElementById('')
-
-$("#portfolioByValue").click(function(){
-  dataSetLab = 'Sheet1!B11:G11';
-  dataForBig = 'Sheet1!A11';
-  bigChart.destroy();
-  bigChart = new Chart(ctx, {
-    type: 'line',
+document.getElementById('portfolioByType').onclick = function() {
+  myChart.destroy();
+  myChart = new Chart(ctx, {
+    type: 'bar',
+    data: chartData
   });
-});
+};
 
-'Sheet1!B11:G11'
+document.getElementById('portfolioByPercent').onclick = function() {
+  myChart.destroy();
+  myChart = new Chart(ctx, {
+    type: 'pie',
+    data: chartData
+  });
+};
+ 
