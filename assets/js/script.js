@@ -132,62 +132,67 @@ $(".stat-9").click(function(){
 
 // Big Chart
 
-var chartData = {
-  datasets: [{
-    label: 'Portfolio by value',
-  }]
-};
+
 var dataLab;
 var indexLab;
-var data;
+var dataBig;
+var chartType;
+var backgroundColors;  
 
 
-var ctx = document.getElementById("bigChart");
-var bigChart = new Chart(ctx, {
-  type: 'line',
-  data: chartData,
-  plugins: [ChartDataSource],
-  options: {
-    scales: {
-      yAxes: [{
-        ticks: {
-          beginAtZero: true
+function drawBigCharts(dataLab, indexLab, dataBig, chartType){
+  var ctx = document.getElementById('bigChart').getContext('2d');
+  var bigChart = new Chart(ctx, {
+      type: chartType,
+      data: {
+          datasets: [{
+              cubicInterpolationMode: 'monotone',
+              backgroundColor: backgroundColors,
+              borderColor: [
+                  '#72223b'
+              ],
+              borderWidth: 1
+          }]
+      },
+      plugins: [ChartDataSource],
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero: true
+                  }
+              }]
+          },
+        plugins: {
+          datasource: {
+            type: 'sheet',
+            url: 'dataset.xlsx',
+            datasetLabels: dataLab,
+            indexLabels: indexLab,
+            data: dataBig,
+          }
+
         }
-      }]
-    },
-    plugins: {
-      datasource: {
-        type: 'sheet',
-        url: 'dataset.xlsx',
-        datasetLabels:'Sheet1!A11',
-        indexLabels: 'Sheet1!B1:G1',
-        data: 'Sheet1!B11:G11',
       }
-    }
-  }
+  })
+};
+
+
+$('#portfolioByValue').click(function(){
+  dataLab = 'Sheet2!A2';
+  indexLab = 'Sheet2!B1:G1';
+  dataBig = 'Sheet2!B2:G2';
+  chartType = 'line';
+  drawBigCharts(dataLab, indexLab, dataBig, chartType);
 });
 
-document.getElementById('portfolioByValue').onclick = function() {
-  myChart.destroy();
-  myChart = new Chart(ctx, {
-    type: 'line',
-    data: chartData
-  });
-};
-
-document.getElementById('portfolioByType').onclick = function() {
-  myChart.destroy();
-  myChart = new Chart(ctx, {
-    type: 'bar',
-    data: chartData
-  });
-};
-
-document.getElementById('portfolioByPercent').onclick = function() {
-  myChart.destroy();
-  myChart = new Chart(ctx, {
-    type: 'pie',
-    data: chartData
-  });
-};
- 
+$('#portfolioByType').click(function(){
+  dataLab = 'Sheet3!A2:A4';
+  indexLab = 'Sheet3!B1:G1';
+  dataBig = 'Sheet3!B2:G4';
+  chartType = 'bar';
+  backgroundColors = ['rgba(255, 99, 132, 0.2)',
+  'rgba(54, 162, 235, 0.2)',
+  'rgba(255, 206, 86, 0.2)'];
+  drawBigCharts(dataLab, indexLab, dataBig, chartType);
+});
