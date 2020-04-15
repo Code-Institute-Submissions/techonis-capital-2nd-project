@@ -137,22 +137,42 @@ var dataLab;
 var indexLab;
 var dataBig;
 var chartType;
-var backgroundColors;  
+var backgroundColors = [{
+  label: 'Property price',
+  cubicInterpolationMode: 'monotone',
+  backgroundColor: 'yellow',
+  borderColor: [
+      '#72223b'
+  ],
+  borderWidth: 1
+},
+{
+  label: 'Property price',
+  cubicInterpolationMode: 'monotone',
+  backgroundColor: 'blue',
+  borderColor: [
+      '#72223b'
+  ],
+  borderWidth: 1
+},
+{
+  label: 'Property price',
+  cubicInterpolationMode: 'monotone',
+  backgroundColor: 
+      'red',
+  borderColor: [
+      '#72223b'
+  ],
+  borderWidth: 1
+}];  
 
 
-function drawBigCharts(dataLab, indexLab, dataBig, chartType){
+function drawBigCharts(){
   var ctx = document.getElementById('bigChart').getContext('2d');
   var bigChart = new Chart(ctx, {
       type: chartType,
       data: {
-          datasets: [{
-              cubicInterpolationMode: 'monotone',
-              backgroundColor: backgroundColors,
-              borderColor: [
-                  '#72223b'
-              ],
-              borderWidth: 1
-          }]
+          datasets: backgroundColors,
       },
       plugins: [ChartDataSource],
       options: {
@@ -183,7 +203,7 @@ $('#portfolioByValue').click(function(){
   indexLab = 'Sheet2!B1:G1';
   dataBig = 'Sheet2!B2:G2';
   chartType = 'line';
-  drawBigCharts(dataLab, indexLab, dataBig, chartType);
+  drawBigCharts();
 });
 
 $('#portfolioByType').click(function(){
@@ -191,8 +211,13 @@ $('#portfolioByType').click(function(){
   indexLab = 'Sheet3!B1:G1';
   dataBig = 'Sheet3!B2:G4';
   chartType = 'bar';
-  backgroundColors = ['rgba(255, 99, 132, 0.2)',
-  'rgba(54, 162, 235, 0.2)',
-  'rgba(255, 206, 86, 0.2)'];
-  drawBigCharts(dataLab, indexLab, dataBig, chartType);
+  drawBigCharts();
+});
+
+$('#portfolioByPercent').click(function(){
+  dataLab = 'Sheet4!A2:A4';
+  indexLab = 'Sheet4!B1';
+  dataBig = 'Sheet4!B2:B4';
+  chartType = 'polarArea';
+  drawBigCharts();
 });
