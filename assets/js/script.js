@@ -132,92 +132,164 @@ $(".stat-9").click(function(){
 
 // Big Chart
 
-
-var dataLab;
-var indexLab;
-var dataBig;
-var chartType;
-var backgroundColors = [{
-  label: 'Property price',
-  cubicInterpolationMode: 'monotone',
-  backgroundColor: 'yellow',
-  borderColor: [
-      '#72223b'
-  ],
-  borderWidth: 1
-},
-{
-  label: 'Property price',
-  cubicInterpolationMode: 'monotone',
-  backgroundColor: 'blue',
-  borderColor: [
-      '#72223b'
-  ],
-  borderWidth: 1
-},
-{
-  label: 'Property price',
-  cubicInterpolationMode: 'monotone',
-  backgroundColor: 
-      'red',
-  borderColor: [
-      '#72223b'
-  ],
-  borderWidth: 1
-}];  
-
-
-function drawBigCharts(){
-  var ctx = document.getElementById('bigChart').getContext('2d');
-  var bigChart = new Chart(ctx, {
-      type: chartType,
-      data: {
-          datasets: backgroundColors,
+var configValue = {
+  type: 'line',
+  data: {
+      datasets: [{
+          label: 'Property price',
+          cubicInterpolationMode: 'monotone',
+          backgroundColor: [
+              'rgba(255, 99, 132, 0.4)'
+          ],
+          borderColor: [
+              '#72223b'
+          ],
+          borderWidth: 1
+      }]
+  },
+  plugins: [ChartDataSource],
+  options: {
+      scales: {
+          yAxes: [{
+              ticks: {
+                  beginAtZero: true
+              }
+          }]
       },
-      plugins: [ChartDataSource],
-      options: {
-          scales: {
-              yAxes: [{
-                  ticks: {
-                      beginAtZero: true
-                  }
-              }]
-          },
-        plugins: {
-          datasource: {
-            type: 'sheet',
-            url: 'dataset.xlsx',
-            datasetLabels: dataLab,
-            indexLabels: indexLab,
-            data: dataBig,
-          }
-
-        }
+    plugins: {
+      datasource: {
+        type: 'sheet',
+        url: 'dataset.xlsx',
+        datasetLabels: 'Sheet2!A2',
+        indexLabels: 'Sheet2!B1:G1',
+        data: 'Sheet2!B2:G2',
       }
-  })
+
+    }
+  }
+};
+
+var configType = {
+  type: 'bar',
+  data: {
+      datasets: [{
+          label: 'Property price',
+          cubicInterpolationMode: 'monotone',
+          backgroundColor: 'red',
+          borderColor: [
+              '#72223b'
+          ],
+          borderWidth: 1
+      },
+      {
+        label: 'Property price',
+        cubicInterpolationMode: 'monotone',
+        backgroundColor: 'green',
+        borderColor: [
+            '#72223b'
+        ],
+        borderWidth: 1
+    },
+    {
+      label: 'Property price',
+      cubicInterpolationMode: 'monotone',
+      backgroundColor: 'blue',
+      borderColor: [
+          '#72223b'
+      ],
+      borderWidth: 1
+  }]
+  },
+  plugins: [ChartDataSource],
+  options: {
+      scales: {
+          yAxes: [{
+              ticks: {
+                  beginAtZero: true
+              }
+          }]
+      },
+    plugins: {
+      datasource: {
+        type: 'sheet',
+        url: 'dataset.xlsx',
+        datasetLabels: 'Sheet3!A2:A4',
+        indexLabels: 'Sheet3!B1:G1',
+        data: 'Sheet3!B2:G4',
+      }
+
+    }
+  }
+};
+
+var configPercent = {
+  type: 'pie',
+  data: {
+      datasets: [{
+          label: 'Property price',
+          cubicInterpolationMode: 'monotone',
+          backgroundColor: [
+              'rgba(255, 99, 132, 0.4)'
+          ],
+          borderColor: [
+              '#72223b'
+          ],
+          borderWidth: 1
+      }]
+  },
+  plugins: [ChartDataSource],
+  options: {
+      scales: {
+          yAxes: [{
+              ticks: {
+                  beginAtZero: true
+              }
+          }]
+      },
+    plugins: {
+      datasource: {
+        type: 'sheet',
+        url: 'dataset.xlsx',
+        datasetLabels: 'Sheet4!A2:A4',
+        indexLabels: 'Sheet4!B1',
+        data: 'Sheet4!B2:B4'
+      }
+
+    }
+  }
 };
 
 
-$('#portfolioByValue').click(function(){
-  dataLab = 'Sheet2!A2';
-  indexLab = 'Sheet2!B1:G1';
-  dataBig = 'Sheet2!B2:G2';
-  chartType = 'line';
-  drawBigCharts();
-});
 
-$('#portfolioByType').click(function(){
-  dataLab = 'Sheet3!A2:A4';
-  indexLab = 'Sheet3!B1:G1';
-  dataBig = 'Sheet3!B2:G4';
-  chartType = 'bar';
-  drawBigCharts();
-});
+// $("#portfolioByValue").click(function() {
+//   var ctx = document.getElementById('bigChart').getContext('2d'); 
+//   bigChart = new Chart(ctx, configValue);
+// });
 
-$('#portfolioByPercent').click(function(){
-  dataLab = 'Sheet4!A2:A4';
-  indexLab = 'Sheet4!B1';
-  dataBig = 'Sheet4!B2:B4';
-  chartType = 'polarArea';
-  drawBigCharts();
-});
+// $("#portfolioByType").click(function() {
+//   bigChart = 'x';
+//   bigChart = new Chart(ctx, configType);
+// });
+
+// $("#portfolioByPercent").click(function() {
+//   bigChart = 'x';
+//   bigChart = new Chart(ctx, configPercent);
+// });
+
+var ctx  = document.getElementById('bigChart');
+var bigChart = new Chart(ctx , configValue);
+
+document.getElementById('portfolioByValue').onclick = function() {
+  bigChart.destroy();
+  bigChart = new Chart(ctx, configValue);
+};
+
+document.getElementById('portfolioByType').onclick = function() {
+  bigChart.destroy();
+  bigChart = new Chart(ctx, configType);
+};
+
+document.getElementById('portfolioByPercent').onclick = function() {
+  bigChart.destroy();
+  bigChart = new Chart(ctx, configPercent);
+};
