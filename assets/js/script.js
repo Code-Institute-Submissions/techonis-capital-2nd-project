@@ -142,9 +142,9 @@ var configValue = {
               'rgba(255, 99, 132, 0.4)'
           ],
           borderColor: [
-              '#72223b'
+            'rgb(255, 99, 132)'
           ],
-          borderWidth: 1
+          borderWidth: 2
       }]
   },
   plugins: [ChartDataSource],
@@ -175,11 +175,11 @@ var configType = {
       datasets: [{
           label: 'Property price',
           cubicInterpolationMode: 'monotone',
-          backgroundColor: 'red',
+          backgroundColor: 'rgba(255, 99, 132, 0.4)',
           borderColor: [
               '#72223b'
           ],
-          borderWidth: 1
+          borderWidth: 2
       },
       {
         label: 'Property price',
@@ -188,7 +188,7 @@ var configType = {
         borderColor: [
             '#72223b'
         ],
-        borderWidth: 1
+        borderWidth: 2
     },
     {
       label: 'Property price',
@@ -197,7 +197,7 @@ var configType = {
       borderColor: [
           '#72223b'
       ],
-      borderWidth: 1
+      borderWidth: 2
   }]
   },
   plugins: [ChartDataSource],
@@ -225,56 +225,27 @@ var configType = {
 var configPercent = {
   type: 'pie',
   data: {
-      datasets: [{
-          label: 'Property price',
-          cubicInterpolationMode: 'monotone',
-          backgroundColor: [
-              'rgba(255, 99, 132, 0.4)'
-          ],
-          borderColor: [
-              '#72223b'
-          ],
-          borderWidth: 1
-      }]
+    datasets: [{
+      data: [51.89, 46.74, 1.36],
+      borderWidth: 1,
+      backgroundColor: ['Red', 'Green', 'Blue'],
+      borderColor: ['Pink', 'Orange', 'Black']
+    }
+  ],
+    labels: [
+      'Apartments', 'Houses', 'Land'
+    ]
   },
-  plugins: [ChartDataSource],
-  options: {
-      scales: {
-          yAxes: [{
-              ticks: {
-                  beginAtZero: true
-              }
-          }]
-      },
-    plugins: {
-      datasource: {
-        type: 'sheet',
-        url: 'dataset.xlsx',
-        datasetLabels: 'Sheet4!A2:A4',
-        indexLabels: 'Sheet4!B1',
-        data: 'Sheet4!B2:B4'
-      }
-
+   options: {
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
     }
   }
 };
-
-
-
-// $("#portfolioByValue").click(function() {
-//   var ctx = document.getElementById('bigChart').getContext('2d'); 
-//   bigChart = new Chart(ctx, configValue);
-// });
-
-// $("#portfolioByType").click(function() {
-//   bigChart = 'x';
-//   bigChart = new Chart(ctx, configType);
-// });
-
-// $("#portfolioByPercent").click(function() {
-//   bigChart = 'x';
-//   bigChart = new Chart(ctx, configPercent);
-// });
 
 var ctx  = document.getElementById('bigChart');
 var bigChart = new Chart(ctx , configValue);
