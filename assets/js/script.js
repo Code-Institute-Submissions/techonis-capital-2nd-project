@@ -173,30 +173,21 @@ var configType = {
   type: 'bar',
   data: {
       datasets: [{
-          label: 'Property price',
           cubicInterpolationMode: 'monotone',
-          backgroundColor: 'rgba(255, 99, 132, 0.4)',
-          borderColor: [
-              '#72223b'
-          ],
+          backgroundColor: 'rgba(255,0,0,0.4)',
+          borderColor: 'rgb(255,0,0)',
           borderWidth: 2
       },
       {
-        label: 'Property price',
         cubicInterpolationMode: 'monotone',
-        backgroundColor: 'green',
-        borderColor: [
-            '#72223b'
-        ],
+        backgroundColor: 'rgba(0,255,0,0.4)',
+        borderColor: 'rgb(0,255,0)',
         borderWidth: 2
     },
     {
-      label: 'Property price',
       cubicInterpolationMode: 'monotone',
-      backgroundColor: 'blue',
-      borderColor: [
-          '#72223b'
-      ],
+      backgroundColor: 'rgba(0,0,255,0.4)',
+      borderColor: 'rgb(0,0,255)',
       borderWidth: 2
   }]
   },
@@ -228,8 +219,8 @@ var configPercent = {
     datasets: [{
       data: [51.89, 46.74, 1.36],
       borderWidth: 1,
-      backgroundColor: ['Red', 'Green', 'Blue'],
-      borderColor: ['Pink', 'Orange', 'Black']
+      backgroundColor: ['rgba(255,0,0,0.4)', 'rgba(0,255,0,0.4)', 'rgba(0,0,255,0.4)'],
+      borderColor: ['rgb(255,0,0)', 'rgb(0,255,0)', 'rgb(0,0,255)']
     }
   ],
     labels: [
