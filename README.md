@@ -1,2 +1,2 @@
-# techonis-capital-2nd-project
+### Techonis Capital
 Second project for codeinstitute
