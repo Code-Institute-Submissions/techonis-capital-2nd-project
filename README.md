@@ -29,4 +29,4 @@ It takes the data and splits the companys real estate into separate categories a
 * Line awesome
 
 ## How was it deployed and tested
-By using Git locally as my VCS (Version Control System) and then uploading to Github. It was tested using 3 different web browsers(Chrome, Opera and Firefox). It was also check on Samsung galaxy S7. Also used validator.w3.org 
+By using Git locally as my VCS (Version Control System) and then uploading to Github. It was tested using 3 different web browsers(Chrome, Opera and Firefox). It was also check on Samsung galaxy S7. Also used validator.w3.org and jshint.com/
