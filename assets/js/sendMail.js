@@ -1,4 +1,4 @@
-
+// From codeinstitute tutorial
 function sendMail(contactForm) {
     emailjs.send("default_service", "techonis", {
         "from_email": contactForm.emailaddress.value,
