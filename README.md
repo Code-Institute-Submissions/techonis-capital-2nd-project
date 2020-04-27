@@ -1,7 +1,7 @@
 # Techonis Capital
 ### Second project for codeinstitute
 ## Where can you find it?
-You can see the project [here.](http://github.com)
+You can see the project [here.](https://rcesonis.github.io/techonis-capital-2nd-project/index.html#home)
 ## What is it?
 It's company website that shows company data. 
 ## What does it fulfil?
