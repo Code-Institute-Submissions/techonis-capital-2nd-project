@@ -1,7 +1,7 @@
 /* For switching tabs in portfolio */
 $('.object-list a').on('click', function (e) {
     e.preventDefault();
-    $(this).tab('show')
+    $(this).tab('show');
   });
 
 /******************************************
@@ -29,17 +29,16 @@ var chartBorder = 'rgba(114,34,59)';
 var chartNr = [];
 var count = 1;
 var data;
-var myChart;
 var object_title;
 
 
 function createChartNr(){
   while (count < 10){
-    let result = 'smallChart-' + count;
+    var result = 'smallChart-' + count;
     chartNr.push(result);
     count++;
   }
-};
+}
 createChartNr();
 
 
@@ -76,8 +75,8 @@ function drawSmallCharts(chartNr){
 
         }
       }
-  })
-};
+  });
+}
 
 
 $(".stat-1").click(function(){
